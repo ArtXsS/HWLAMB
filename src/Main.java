@@ -1,4 +1,4 @@
-package Worker;
+package worker.src;
 public class Main {
     public static void main(String[] args) {
         OnTaskDoneListener listener = System.out::println;

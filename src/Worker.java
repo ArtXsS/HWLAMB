@@ -1,4 +1,4 @@
-package Worker;
+package worker.src;
 public class Worker{
     private OnTaskDoneListener callback;
     private OnTaskErrorListener errorCallback;
@@ -9,12 +9,12 @@ public class Worker{
     }
 
     public void start() {
-        for (int i = 0; i < 66; i++) {
-            while (i < 33) {
-                callback.onDone("Task " + (i + 1 )+ " is done");
-                i++;
+        for (int i = 0; i < 100; i++) {
+            if (i <= 33) {
+                errorCallback.onError("Task " + i + " is error");
+            } else {
+                callback.onDone("Task " + (i + 1) + " is done");
             }
-            errorCallback.onError("Task " + (i + 1) + " is error");
         }
     }
 }
