@@ -1,9 +1,9 @@
+package Worker;
 public class Main {
     public static void main(String[] args) {
-        Worker.OnTaskDoneListener listener = System.out::println;
-        Worker.OnTaskErrorListener listener2 = System.out::println;
+        OnTaskDoneListener listener = System.out::println;
+        OnTaskErrorListener listener2 = System.out::println;
         Worker worker = new Worker(listener, listener2);
         worker.start();
-        worker.startError();
     }
 }
